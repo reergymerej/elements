@@ -1,3 +1,6 @@
-Learn About <%= @symbol %>
+<h1>
+  <%= @name %>
+</h1>
 
-<%= @atomic_number %>
+atomic number: <%= @atomic_number %><br />
+symbol: <%= @symbol %>

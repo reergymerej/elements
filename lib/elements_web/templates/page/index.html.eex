@@ -15,6 +15,9 @@
       <li>
         <a href="/element/li">Lithium</a>
       </li>
+      <li>
+        <a href="/element/asdfasdf">Not a Real Element</a>
+      </li>
     </ul>
   </article>
 </section>
