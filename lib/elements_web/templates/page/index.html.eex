@@ -1,0 +1,20 @@
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to %{name}!", name: "The Elements Library" %></h1>
+</section>
+
+<section class="row">
+  <article class="column">
+    <h2>Elements</h2>
+    <ul>
+      <li>
+        <a href="/element/h">Hydrogen</a>
+      </li>
+      <li>
+        <a href="/element/he">Helium</a>
+      </li>
+      <li>
+        <a href="/element/li">Lithium</a>
+      </li>
+    </ul>
+  </article>
+</section>
