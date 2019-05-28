@@ -3,4 +3,9 @@
 </h1>
 
 atomic number: <%= @atomic_number %><br />
-symbol: <%= @symbol %>
+symbol: <%= @symbol %><br />
+<%= # TODO: Do not use potentially missing atom.  All of them should have values.
+# https://stackoverflow.com/a/33562798/1319850
+%>
+atomic weight: <%= assigns[:atomic_weight] %>
+

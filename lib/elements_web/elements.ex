@@ -4,6 +4,7 @@ defmodule ElementsWeb.Elements do
       name: "Hydrogen",
       symbol: "h",
       atomic_number: 1,
+      atomic_weight: 1.00794,
     },
 
     "Helium" => %{
@@ -22,6 +23,13 @@ defmodule ElementsWeb.Elements do
       name: "Beryllium",
       symbol: "be",
       atomic_number: 4,
+    },
+
+    "Carbon" => %{
+      name: "Carbon",
+      symbol: "c",
+      atomic_number: 6,
+      atomic_weight: 2.0107,
     },
   }
 
