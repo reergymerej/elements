@@ -2,18 +2,16 @@ defmodule ElementsWeb.ElementsTest do
   use ExUnit.Case
   import ElementsWeb.Elements
 
+  defp contains(list, item) do
+    Enum.member?(list, item) == true
+  end
+
   test "get_symbol_by_name" do
     assert get_symbol_by_name("Lithium") == "li"
   end
 
   test "names" do
-    # TODO: find a way to do a partial match
-    assert names() == [
-      "Beryllium",
-      "Helium",
-      "Hydrogen",
-      "Lithium",
-    ]
+    assert names() |> contains("Helium")
   end
 
   test "get_symbol" do
