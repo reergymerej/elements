@@ -6,15 +6,11 @@
   <article class="column">
     <h2>Elements</h2>
     <ul>
-      <li>
-        <a href="/element/h">Hydrogen</a>
-      </li>
-      <li>
-        <a href="/element/he">Helium</a>
-      </li>
-      <li>
-        <a href="/element/li">Lithium</a>
-      </li>
+      <%= for name <- get_element_names() do %>
+        <li>
+          <a href="/element/<%= get_element_symbol(name) %>"><%= name %> - <%= get_element_symbol(name) %></a>
+        </li>
+      <% end %>
       <li>
         <a href="/element/asdfasdf">Not a Real Element</a>
       </li>

@@ -3,13 +3,31 @@ defmodule ElementsWeb.PageController do
 
   @unknown "???"
 
+  @elements %{
+    "Hydrogen" => %{
+      name: "Hydrogen",
+      symbol: "h",
+      atomic_number: 1,
+    },
+
+    "Helium" => %{
+      name: "Helium",
+      symbol: "he",
+      atomic_number: 2,
+    },
+
+    "Lithium" => %{
+      name: "Lithium",
+      symbol: "li",
+      atomic_number: 3,
+    },
+  }
+
   def index(conn, _params) do
     render(conn, "index.html")
   end
 
   def view(conn, %{"symbol" => symbol}) do
-    # %{"foo" => "bar"} is a map
-
     render(
       conn,
 	get_template(symbol),
@@ -29,26 +47,7 @@ defmodule ElementsWeb.PageController do
   end
 
   defp get_element(symbol) do
-    case symbol do
-      "h" -> %{
-        symbol: "h",
-        name: "Hydrogen",
-        atomic_number: 1,
-      }
-
-      "he" -> %{
-        symbol: "he",
-        name: "Helium",
-        atomic_number: 2,
-      }
-
-      "li" -> %{
-          symbol: "li",
-          name: "Lithium",
-          atomic_number: 3,
-      }
-
-      _ -> %{ symbol: @unknown }
-    end
+    { _name, element } = Enum.find(@elements, fn {name, value} -> value[:symbol] == symbol end)
+    element
   end
 end
