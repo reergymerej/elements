@@ -26,7 +26,7 @@ defmodule ElementsWeb.Elements do
   }
 
   # The keys in elements are strings, so we can access them like this.
-  def get_symbol_by_name(name) do
+  def by_name(name) do
     @elements[name][:symbol]
   end
 
@@ -39,7 +39,9 @@ defmodule ElementsWeb.Elements do
   end
 
   def by_symbol(symbol) do
-    { _name, element } = Enum.find(@elements, fn {name, value} -> value[:symbol] == symbol end)
-    element
+    case Enum.find(@elements, fn {_name, value} -> value[:symbol] == symbol end) do
+      { _name, element } -> element
+      _ -> nil
+    end
   end
 end

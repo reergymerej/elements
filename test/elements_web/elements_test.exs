@@ -6,11 +6,12 @@ defmodule ElementsWeb.ElementsTest do
   # Since we're testing this, it makes sense to expose all its members.
   import ElementsWeb.Elements
 
-  test "get_symbol_by_name" do
-    assert get_symbol_by_name("Lithium") == "li"
+  test "by_name" do
+    assert by_name("Lithium") == "li"
   end
 
   test "names" do
+    # 🙊
     assert names() |> Ass.contains("Helium")
   end
 
@@ -24,5 +25,9 @@ defmodule ElementsWeb.ElementsTest do
       symbol: "be",
       atomic_number: 4,
     }
+  end
+
+  test "by_symbol, nil" do
+    assert by_symbol("xyz") == nil
   end
 end

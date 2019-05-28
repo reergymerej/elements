@@ -1,8 +1,6 @@
 defmodule ElementsWeb.PageController do
   use ElementsWeb, :controller
 
-  @unknown "???"
-
   def index(conn, _params) do
     render(conn, "index.html")
   end
@@ -10,8 +8,8 @@ defmodule ElementsWeb.PageController do
   def view(conn, %{"symbol" => symbol}) do
     render(
       conn,
-	get_template(symbol),
-        get_element(symbol)
+      get_template(symbol),
+      get_assigns(symbol)
     )
 
     # assigns - a dictionary with the assigns to be used in the view. Those
@@ -20,13 +18,14 @@ defmodule ElementsWeb.PageController do
   end
 
   defp get_template(symbol) do
-    case get_element(symbol) do
-      %{symbol: @unknown} -> "view-unknown-element.html"
-      _ -> "view-element.html"
+    if ElementsWeb.Elements.by_symbol(symbol) do
+      "view-element.html"
+    else
+      "view-unknown-element.html"
     end
   end
 
-  defp get_element(symbol) do
-    ElementsWeb.Elements.by_symbol(symbol)
+  defp get_assigns(symbol) do
+    ElementsWeb.Elements.by_symbol(symbol) || %{symbol: symbol}
   end
 end

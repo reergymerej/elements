@@ -63,3 +63,5 @@ How do install deps?
 
   Now I can run and watch with
     mix test.watch test/elements_web/elements_test.exs
+    mix test.watch test/elements_web/elements_test.exs --stale --exclude pending
+    @tag :pending
