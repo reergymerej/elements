@@ -44,6 +44,7 @@ How does mix.compile work?
     which are all compiled, so the names are available in any of the modules.
 
 What about module naming conflicts?
+  Looks like they'll clobber each other.
 
 How do we run unit tests for single modules?
   https://stackoverflow.com/a/21888877/1319850
