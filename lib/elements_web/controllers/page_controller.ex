@@ -11,17 +11,28 @@ defmodule ElementsWeb.PageController do
       get_template(symbol),
       get_assigns(symbol)
     )
-
     # assigns - a dictionary with the assigns to be used in the view. Those
     # assigns are merged and have higher precedence than the connection assigns
     # (conn.assigns)
+    #
   end
 
   def intersection(conn, _params) do
-    render(conn, "intersection.html")
+    render(conn, "intersection.html", %{
+      a: %{
+        top: 66,
+        bottom: 99,
+        left: 22,
+        right: 44,
+      },
+      b: %{
+        top: 10,
+        bottom: 20,
+        left: 10,
+        right: 20,
+      },
+    })
   end
-
-  # TODO: Expose a new route for intersections.
 
   defp get_template(symbol) do
     if ElementsWeb.Elements.by_symbol(symbol) do

@@ -1,1 +1,42 @@
-intersection
+<h2>
+  intersection
+</h2>
+
+<div>
+  <h3>
+    box a
+  </h3>
+
+  <div>
+    top: <%= @a.top %>
+  </div>
+  <div>
+    bottom: <%= @a.bottom %>
+  </div>
+  <div>
+    left: <%= @a.left %>
+  </div>
+  <div>
+    right: <%= @a.right %>
+  </div>
+</div>
+
+<div>
+  <h3>
+    box b
+  </h3>
+
+  <div>
+    top: <%= @b.top %>
+  </div>
+  <div>
+    bottom: <%= @b.bottom %>
+  </div>
+  <div>
+    left: <%= @b.left %>
+  </div>
+  <div>
+    right: <%= @b.right %>
+  </div>
+</div>
+
