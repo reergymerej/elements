@@ -17,6 +17,12 @@ defmodule ElementsWeb.PageController do
     # (conn.assigns)
   end
 
+  def intersection(conn, _params) do
+    render(conn, "intersection.html")
+  end
+
+  # TODO: Expose a new route for intersections.
+
   defp get_template(symbol) do
     if ElementsWeb.Elements.by_symbol(symbol) do
       "view-element.html"

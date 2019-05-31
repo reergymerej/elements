@@ -6,8 +6,8 @@ defmodule ElementsWeb.ElementsTest do
   # Since we're testing this, it makes sense to expose all its members.
   import ElementsWeb.Elements
 
-  test "by_name" do
-    assert by_name("Lithium") == "li"
+  test "symbol_by_name" do
+    assert symbol_by_name("Lithium") == "li"
   end
 
   test "names" do
@@ -29,5 +29,10 @@ defmodule ElementsWeb.ElementsTest do
 
   test "by_symbol, nil" do
     assert by_symbol("xyz") == nil
+  end
+
+  @tag :pending
+  test "elements should be shimmed to have all values" do
+    assert symbol_by_name("Helium")[:atomic_weight] == nil
   end
 end

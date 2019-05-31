@@ -11,6 +11,7 @@ defmodule ElementsWeb.Elements do
       name: "Helium",
       symbol: "he",
       atomic_number: 2,
+      atomic_weight: nil,
     },
 
     "Lithium" => %{
@@ -34,8 +35,10 @@ defmodule ElementsWeb.Elements do
   }
 
   # The keys in elements are strings, so we can access them like this.
-  def by_name(name) do
-    @elements[name][:symbol]
+  def symbol_by_name(name) do
+    get_symbol(
+      @elements[name]
+    )
   end
 
   def names() do

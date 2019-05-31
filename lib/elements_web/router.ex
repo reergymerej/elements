@@ -25,6 +25,12 @@ defmodule ElementsWeb.Router do
     get "/:symbol", PageController, :view
   end
 
+  scope "/intersection", ElementsWeb do
+    pipe_through :browser
+
+    get "/", PageController, :intersection
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", ElementsWeb do
   #   pipe_through :api

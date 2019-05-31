@@ -10,6 +10,6 @@ defmodule ElementsWeb.PageView do
   end
 
   def get_element_symbol(name) do
-    ElementsWeb.Elements.by_name(name)
+    ElementsWeb.Elements.symbol_by_name(name)
   end
 end
