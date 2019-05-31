@@ -40,3 +40,6 @@
   </div>
 </div>
 
+<h2>
+  These intersect - <%= @intersect %>
+</h2>

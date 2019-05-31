@@ -12,8 +12,11 @@ defmodule ElementsWeb.PageControllerTest do
     assert html_response(conn, 200) =~ "What?"
   end
 
-  test "GET /intersection", %{conn: conn} do
-    conn = get(conn, "/intersection")
-    assert html_response(conn, 200) =~ "intersection"
+  test "GET /intersection/1/2", %{conn: conn} do
+    conn = get(conn, "/intersection/1/2/3/4")
+    assert html_response(conn, 200) =~ "1"
+    assert html_response(conn, 200) =~ "2"
+    assert html_response(conn, 200) =~ "3"
+    assert html_response(conn, 200) =~ "4"
   end
 end

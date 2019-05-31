@@ -28,7 +28,7 @@ defmodule ElementsWeb.Router do
   scope "/intersection", ElementsWeb do
     pipe_through :browser
 
-    get "/", PageController, :intersection
+    get "/:a_top/:a_bottom/:a_left/:a_right", PageController, :intersection
   end
 
   # Other scopes may use custom stacks.
