@@ -58,7 +58,10 @@ defmodule ElementsWeb.PageController do
   end
 
   defp do_these_intersect(boxes) do
-    true
+    ElementsWeb.Intersections.boxes_intersect(
+      boxes.a,
+      boxes.b
+    )
   end
 
   defp get_template(symbol) do
