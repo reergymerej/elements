@@ -14,54 +14,51 @@ defmodule ElementsWeb.PageController do
     # assigns - a dictionary with the assigns to be used in the view. Those
     # assigns are merged and have higher precedence than the connection assigns
     # (conn.assigns)
-    #
   end
 
-  def intersection(conn, %{
-    "a_top" => a_top,
-    "a_bottom" => a_bottom,
-    "a_left" => a_left,
-    "a_right" => a_right,
-  }) do
-    render(conn, "intersection.html", %{
+  def intersection(conn, params) do
+    render(conn, "intersection.html", get_intersection_assigns(params))
+  end
+
+  defp get_intersection_assigns(params) do
+    parse_sides(params)
+    |> add_intersect()
+  end
+
+  defp parse_sides(params) do
+    %{
       a: %{
-        top: a_top,
-        bottom: a_bottom,
-        left: a_left,
-        right: a_right,
+        top: get_int(params["a_top"]),
+        bottom: get_int(params["a_bottom"]),
+        left: get_int(params["a_left"]),
+        right: get_int(params["a_right"]),
       },
 
       b: %{
-        top: 10,
-        bottom: 20,
-        left: 10,
-        right: 20,
+        top: get_int(params["b_top"]),
+        bottom: get_int(params["b_bottom"]),
+        left: get_int(params["b_left"]),
+        right: get_int(params["b_right"]),
       },
-
-      intersect: do_these_intersect(%{
-        a: %{
-          top: a_top,
-          bottom: a_bottom,
-          left: a_left,
-          right: a_right,
-        },
-
-        b: %{
-          top: 10,
-          bottom: 20,
-          left: 10,
-          right: 20,
-        },
-      }),
-    })
+    }
   end
 
-  defp do_these_intersect(info) do
-    case Integer.parse(info.a.top) do
-      {a_top, ""} ->
-        a_top < 100
-      _ -> false
+  defp get_int(string) do
+    case Integer.parse(string) do
+      {val, ""} ->
+        val
+      _ ->
+        # TODO: We should probably throw or make this a maybe-int.
+        0
     end
+  end
+
+  defp add_intersect(boxes) do
+    Map.put(boxes, :intersect, do_these_intersect(boxes))
+  end
+
+  defp do_these_intersect(boxes) do
+    true
   end
 
   defp get_template(symbol) do
