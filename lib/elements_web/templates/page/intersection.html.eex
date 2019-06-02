@@ -11,19 +11,19 @@
       </legend>
       <label>
         Top
-        <input type="text" value="<%= @a.top %>" name="a[top]" />
+        <input type="number" value="<%= @a.top %>" name="a[top]" />
       </label>
       <label>
         Bottom
-        <input type="text" value="<%= @a.bottom %>" name="a[bottom]" />
+        <input type="number" value="<%= @a.bottom %>" name="a[bottom]" />
       </label>
       <label>
         Left
-        <input type="text" value="<%= @a.left %>" name="a[left]" />
+        <input type="number" value="<%= @a.left %>" name="a[left]" />
       </label>
       <label>
         Right
-        <input type="text" value="<%= @a.right %>" name="a[right]" />
+        <input type="number" value="<%= @a.right %>" name="a[right]" />
       </label>
     </fieldset>
   </article>
@@ -35,19 +35,19 @@
       </legend>
       <label>
         Top
-        <input type="text" value="<%= @b.top %>" name="b[top]" />
+        <input type="number" value="<%= @b.top %>" name="b[top]" />
       </label>
       <label>
         Bottom
-        <input type="text" value="<%= @b.bottom %>" name="b[bottom]" />
+        <input type="number" value="<%= @b.bottom %>" name="b[bottom]" />
       </label>
       <label>
         Left
-        <input type="text" value="<%= @b.left %>" name="b[left]" />
+        <input type="number" value="<%= @b.left %>" name="b[left]" />
       </label>
       <label>
         Right
-        <input type="text" value="<%= @b.right %>" name="b[right]" />
+        <input type="number" value="<%= @b.right %>" name="b[right]" />
       </label>
     </fieldset>
   </article>
