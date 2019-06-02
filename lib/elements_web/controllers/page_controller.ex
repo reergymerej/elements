@@ -28,17 +28,17 @@ defmodule ElementsWeb.PageController do
   defp parse_sides(params) do
     %{
       a: %{
-        top: get_int(params["a_top"]),
-        bottom: get_int(params["a_bottom"]),
-        left: get_int(params["a_left"]),
-        right: get_int(params["a_right"]),
+        top: get_int(params["a"]["top"]),
+        bottom: get_int(params["a"]["bottom"]),
+        left: get_int(params["a"]["left"]),
+        right: get_int(params["a"]["right"]),
       },
 
       b: %{
-        top: get_int(params["b_top"]),
-        bottom: get_int(params["b_bottom"]),
-        left: get_int(params["b_left"]),
-        right: get_int(params["b_right"]),
+        top: get_int(params["b"]["top"]),
+        bottom: get_int(params["b"]["bottom"]),
+        left: get_int(params["b"]["left"]),
+        right: get_int(params["b"]["right"]),
       },
     }
   end

@@ -2,44 +2,63 @@
   intersection
 </h2>
 
-<div>
-  <h3>
-    box a
-  </h3>
+<form action="" method="get">
+  <div class="row">
+  <article class="column">
+    <fieldset>
+      <legend>
+        Box A
+      </legend>
+      <label>
+        Top
+        <input type="text" value="<%= @a.top %>" name="a[top]" />
+      </label>
+      <label>
+        Bottom
+        <input type="text" value="<%= @a.bottom %>" name="a[bottom]" />
+      </label>
+      <label>
+        Left
+        <input type="text" value="<%= @a.left %>" name="a[left]" />
+      </label>
+      <label>
+        Right
+        <input type="text" value="<%= @a.right %>" name="a[right]" />
+      </label>
+    </fieldset>
+  </article>
 
-  <div>
-    top: <%= @a.top %>
+  <article class="column">
+    <fieldset>
+      <legend>
+        Box A
+      </legend>
+      <label>
+        Top
+        <input type="text" value="<%= @b.top %>" name="b[top]" />
+      </label>
+      <label>
+        Bottom
+        <input type="text" value="<%= @b.bottom %>" name="b[bottom]" />
+      </label>
+      <label>
+        Left
+        <input type="text" value="<%= @b.left %>" name="b[left]" />
+      </label>
+      <label>
+        Right
+        <input type="text" value="<%= @b.right %>" name="b[right]" />
+      </label>
+    </fieldset>
+  </article>
   </div>
-  <div>
-    bottom: <%= @a.bottom %>
-  </div>
-  <div>
-    left: <%= @a.left %>
-  </div>
-  <div>
-    right: <%= @a.right %>
-  </div>
-</div>
 
-<div>
-  <h3>
-    box b
-  </h3>
-
-  <div>
-    top: <%= @b.top %>
-  </div>
-  <div>
-    bottom: <%= @b.bottom %>
-  </div>
-  <div>
-    left: <%= @b.left %>
-  </div>
-  <div>
-    right: <%= @b.right %>
-  </div>
-</div>
+  <button>
+    submit
+  </button>
+</form>
 
 <h2>
   These intersect - <%= @intersect %>
 </h2>
+
