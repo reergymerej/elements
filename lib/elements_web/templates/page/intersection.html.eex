@@ -2,6 +2,11 @@
   intersection
 </h2>
 
+<div style="border: 1px solid; width: 500px; height: 300px; position: relative;">
+  <div class="box" style="top: <%= @a.top %>px; left: <%= @a.left %>px; height: <%= @a.bottom - @a.top %>px; width: <%= @a.right - @a.left %>px"></div>
+  <div class="box" style="top: <%= @b.top %>px; left: <%= @b.left %>px; height: <%= @b.bottom - @b.top %>px; width: <%= @b.right - @b.left %>px"></div>
+</div>
+
 <form action="" method="get">
   <div class="row">
   <article class="column">
@@ -31,7 +36,7 @@
   <article class="column">
     <fieldset>
       <legend>
-        Box A
+        Box B
       </legend>
       <label>
         Top
